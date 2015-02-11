@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
 	// * End simple matrix multiply     *
 	// **********************************
 	clock_t end = clock() / (CLOCKS_PER_SEC / 1000);
-	fprintf(stdout, "%ld", (end - start));
+	fprintf(stdout, "%ld\n", (end - start));
 	// ******************************
 	// * Stop embedded timing here  *
 	// ******************************
@@ -99,6 +99,8 @@ int main(int argc, char** argv) {
 //	pirntMatrix(m, k, A, "A");
 //	pirntMatrix(k, j, B, "B");
 //	pirntMatrix(m, n, C, "C");
+
+	return 0;
 }
 //     **  END MAIN PROGRAM  **
 
