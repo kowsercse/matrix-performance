@@ -14,6 +14,7 @@
 //     *************************************************
 
 #include<stdio.h>
+#include<time.h>
 
 double **dmatrix(int nrl, int nrh, int ncl, int nch);
 void nerror(char *error_text);
@@ -71,10 +72,11 @@ int main(int argc, char** argv) {
 		}
 	}
 
+
 	// ******************************
 	// * Start embedded timing here *
 	// ******************************
-
+	clock_t start = clock() / (CLOCKS_PER_SEC / 1000);
 	// **********************************
 	// * Perform simple matrix multiply *
 	// **********************************
@@ -85,13 +87,18 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
+	// **********************************
+	// * End simple matrix multiply     *
+	// **********************************
+	clock_t end = clock() / (CLOCKS_PER_SEC / 1000);
+	fprintf(stdout, "%ld", (end - start));
 	// ******************************
 	// * Stop embedded timing here  *
 	// ******************************
 
-	pirntMatrix(m, k, A, "A");
-	pirntMatrix(k, j, B, "B");
-	pirntMatrix(m, n, C, "C");
+//	pirntMatrix(m, k, A, "A");
+//	pirntMatrix(k, j, B, "B");
+//	pirntMatrix(m, n, C, "C");
 }
 //     **  END MAIN PROGRAM  **
 
