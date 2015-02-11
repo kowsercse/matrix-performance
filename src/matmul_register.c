@@ -21,8 +21,9 @@ void nerror(char *error_text);
 void pirntMatrix(int I, int J, double** M, char *name);
 
 int main(int argc, char** argv) {
-	int l, m, n, k;
-	int i, j;
+	register int l, m, n, k;
+	register int i, j;
+	register double sum;
 	double temp;
 	double **A, **B, **C;
 
@@ -82,9 +83,11 @@ int main(int argc, char** argv) {
 	// **********************************
 	for (i = 0; i < m; i++) {
 		for (j = 0; j < n; j++) {
+			sum = 0;
 			for (l = 0; l < k; l++) {
-				C[i][j] = C[i][j] + A[i][l] * B[l][j];
+				sum += A[i][l] * B[l][j];
 			}
+			C[i][j] = sum;
 		}
 	}
 	// **********************************
