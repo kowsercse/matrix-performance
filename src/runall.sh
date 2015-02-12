@@ -1,6 +1,6 @@
 rm -rf *.out
 
-codes=( naive loop_interchange register prefetch loop_unrolling )
+codes=( naive loop_interchange block register prefetch loop_unrolling )
 
 output="size"
 for code in ${codes[@]}
@@ -17,7 +17,7 @@ do
 done
 echo $output
 
-for size in 400 800 #1200 1600 2000
+for size in 400 1200 1600 2000
 do
 	output=$size
 	for code in ${codes[@]}
