@@ -157,9 +157,10 @@ void pirntMatrix(int I, int J, double** M, char *name) {
 	// * Print out a 10 x 10 matrix for testing only    *
 	// * Comment out when timing                        *
 	// **************************************************
+	int i, j;
 	fprintf(stdout, "Here is the matrix %s:\n", name);
-	for (int i = 0; i < I; i++) {
-		for (int j = 0; j < J; j++) {
+	for (i = 0; i < I; i++) {
+		for (j = 0; j < J; j++) {
 			fprintf(stdout, "%10.2f ", M[i][j]);
 		}
 		fprintf(stdout, "\n");
