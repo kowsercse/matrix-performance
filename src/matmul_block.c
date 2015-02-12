@@ -17,6 +17,8 @@
 #include<time.h>
 #include<stdlib.h>
 
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+
 double **dmatrix(int nrl, int nrh, int ncl, int nch);
 void nerror(char *error_text);
 void pirntMatrix(int I, int J, double** M, char *name);
@@ -89,9 +91,9 @@ int main(int argc, char** argv) {
 	for (block_i = 0; block_i < n; block_i = block_i + block_size) {
 		for (block_j = 0; block_j < n; block_j = block_j + block_size) {
 			for (block_k = 0; block_k < n; block_k = block_k + block_size) {
-				for (i = block_i; i <= min(block_i + block_size - 1, n - 1); i++) {
-					for (j = block_j; j <= min(block_j + block_size - 1, n - 1); j++) {
-						for (k = block_k; k <= min(block_k + block_size - 1, n - 1); k++) {
+				for (i = block_i; i <= MIN(block_i + block_size - 1, n - 1); i++) {
+					for (j = block_j; j <= MIN(block_j + block_size - 1, n - 1); j++) {
+						for (k = block_k; k <= MIN(block_k + block_size - 1, n - 1); k++) {
 							C[i][j] = C[i][j] + A[i][k] * B[k][j];
 						}
 					}
