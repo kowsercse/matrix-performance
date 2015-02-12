@@ -15,6 +15,7 @@
 
 #include<stdio.h>
 #include<time.h>
+#include<stdlib.h>
 
 double **dmatrix(int nrl, int nrh, int ncl, int nch);
 void nerror(char *error_text);
